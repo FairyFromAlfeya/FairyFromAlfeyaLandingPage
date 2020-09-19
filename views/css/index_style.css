@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #000;
+}
+
+#smoke_video_background {
+    width: 100%;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.link_buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 1000px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.link_buttons a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 60pt;
+    text-align: center;
+    line-height: 1.5;
+
+    opacity: 0.0;
+    visibility: hidden;
+
+    box-sizing: border-box;
+
+    width: 130px;
+    height: 130px;
+
+    border: 5px solid #fff;
+    border-radius: 65px;
+}
+
+@keyframes show-link {
+    to {
+        visibility: visible;
+        opacity: 1.0;
+    }
+}
+
+.link_buttons a:nth-child(3) {
+    animation: show-link 3s ease forwards 4.2s;
+}
+
+.link_buttons a:nth-child(2), .link_buttons a:nth-child(4) {
+    animation: show-link 3s ease forwards 4.7s;
+}
+
+.link_buttons a:nth-child(1), .link_buttons a:nth-child(5) {
+    animation: show-link 3s ease forwards 5.2s;
+}
+
+.link_buttons a:hover {
+    cursor: pointer;
+
+    border-color: transparent;
+    color: #777777;
+    box-shadow: 0 0 50px #fff;
+}
+
+#logo path:nth-child(1) {
+    stroke-dasharray: 790.847900390625;
+    stroke-dashoffset: 790.847900390625;
+}
+
+#logo path:nth-child(2) {
+    stroke-dasharray: 947.5921020507812;
+    stroke-dashoffset: 947.5921020507812;
+}
+
+#logo path:nth-child(3) {
+    stroke-dasharray: 502.8480224609375;
+    stroke-dashoffset: 502.8480224609375;
+}
+
+#logo path:nth-child(4) {
+    stroke-dasharray: 1042.657470703125;
+    stroke-dashoffset: 1042.657470703125;
+}
+
+#logo path:nth-child(5) {
+    stroke-dasharray: 785.2750854492188;
+    stroke-dashoffset: 785.2750854492188;
+}
+
+@keyframes line-animation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+#logo path {
+    animation: line-animation 3s ease forwards;
+}
+
+@keyframes fill-animation {
+    from {
+        fill: transparent;
+    } to {
+        fill: #fff;
+    }
+}
+
+@keyframes move-animation {
+    to {
+        top: 23%;
+
+        width: 322px;
+        height: 80px;
+    }
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation: fill-animation .5s ease-in forwards 3s, move-animation 1s ease-in forwards 3.5s;
+}
+
+@media (max-width: 1060px) {
+    .link_buttons {
+        width: 600px;
+    }
+
+    .link_buttons a {
+        font-size: 35pt;
+        line-height: 1.5;
+    
+        width: 80px;
+        height: 80px;
+    
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 845px) {
+    #logo {
+        height: 150px;
+        width: 604px;
+    }
+}
+
+@media (max-width: 650px) {
+    .link_buttons {
+        width: 320px;
+    }
+
+    .link_buttons a {
+        margin-bottom: 20px;
+    }
+
+    .link_buttons a:nth-child(4) {
+        margin: 0 40px 0 auto;
+    }
+
+    .link_buttons a:nth-child(5) {
+        margin: 0 auto 0 0;
+    }
+
+    .link_buttons a:nth-child(2) {
+        animation: show-link 3s ease forwards 4.2s;
+    }
+    
+    .link_buttons a:nth-child(1), .link_buttons a:nth-child(3) {
+        animation: show-link 3s ease forwards 4.7s;
+    }
+    
+    .link_buttons a:nth-child(4), .link_buttons a:nth-child(5) {
+        animation: show-link 3s ease forwards 5.2s;
+    }
+
+    #logo {
+        width: 343px;
+        height: 85px;
+    }
+
+    @keyframes move-animation {
+        to {
+            top: 23%;
+            width: 242px;
+            height: 60px;
+        }
+    }
+}
+
+@media (max-height: 375px) {
+    @keyframes move-animation {
+        to {
+            top: 18%;
+            width: 242px;
+            height: 60px;
+        }
+    }
+}
